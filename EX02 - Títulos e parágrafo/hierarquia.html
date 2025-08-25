@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIERARQUIA DE TÍTULOS</title>
+
+    <style>
+        *{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        h1{
+            color: #1C2B67;
+        }
+
+        h2{
+            color: #365D86; 
+        }
+
+        h3{
+            color: #5893A4;
+        }
+        
+        h4{
+            color: #808080;
+        }
+
+        p{
+            text-align: justify;
+            text-indent: 2em;
+        }
+        </style>
+
+
+</head>
+<body>
+    <h1>BOAS PRÁTICAS DA ACESSIBILIDADE DIGITAL</h1>
+
+    <h2>BOAS PRÁTICAS NO DESENVOLVIMENTO</h2>
+
+    <h3>DESCRIÇÃO DAS IMAGENS</h3>
+
+    <p>Para que pessoas com deficiência visual severa – cegueira total
+         ou parcial – tenham acesso ao conteúdo de um site, é necessário
+          que todas as imagens e conteúdos não-textuais tenham uma descrição. 
+          Esse conteúdo em texto deve seguir algumas diretrizes pré-estabelecidas
+           para que estejam de maneira apropriada à navegação por leitores de 
+           tela. Uma imagem pode ou não transmitir uma informação. Desta forma, 
+           podemos dividir as imagens inseridas em uma página de duas formas: 
+           com conteúdo e decorativa.
+    </p>
+
+    <h4>IMAGENS COM CONTEÚDO</h4>
+
+    <p>Todas as imagens que apresentam conteúdo devem conter uma descrição.
+     A descrição da imagem pode ser informada no próprio texto ou por meio
+      de um atributo específico do elemento img no HTML, também chamado 
+      de ALT. A descrição fornecida através deste atributo não aparece 
+      visualmente. Esse recurso só será reconhecido pelo leitor de ela 
+      quando o usuário, navegando pelo teclado, passar por ela.
+       Desta forma, os usuários com deficiência visual sabem qual é o
+        conteúdo da imagem por meio do texto de descrição.
+    </p>
+
+    <h4>IMAGENS DECORATIVAS</h4>
+
+   <p> As imagens decorativas devem ser ignoradas pelos recursos de tecnologia
+     assistiva. Ou seja, os leitores de tela não devem considerar a
+      presença delas, pois não há conteúdo a ser transmitido.
+      Para que o código esteja preparado, a recomendação é a inserção de 
+      todas as imagens decorativas através das folhas de estilo (CSS).
+       Em relação ao atributo ALT, a indicação é não preenchê-lo com 
+       nenhuma informação, também chamada de alt vazio (alt=””). Assim, 
+       os leitores de tela não reconhecerão esses conteúdos, facilitando 
+       a navegação assistiva.</p>
+
+    <h3>HIERARQUIA DE CABEÇALHOS</h3>
+
+    <p>Existe a possibilidade de navegar entre cabeçalhos, 
+        de maneira hierárquica. Ou seja, se eu estou navegando entre H1,
+         eu posso a qualquer momento querer varrer entre os cabeçalhos H2 
+         filhos daquele H1 e depois nos H3 filhos de um determinado H2
+          desde que o site esteja corretamente </p>
+
+
+
+</body>
+</html>
