@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores da Argentina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cor-primaria: #5800ff; 
+            --cor-fundo: #fdf62; 
+            --cor-destaque: #e6cdbf; 
+            --cor-texto: #333;
+            --sombra-card: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Patrick Hand', cursive, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            font-size: 1.3rem;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        
+        header {
+            background: rgba(88, 0, 255, 0.95);
+            backdrop-filter: blur(5px);
+            color: white;
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-area h2 { font-size: 1.2rem; }
+        
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover { border-bottom: 2px solid #fff; }
+
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('argentina.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .btn-scroll {
+            padding: 12px 30px;
+            background-color: var(--cor-primaria);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .btn-scroll:hover { transform: scale(1.1); background-color: #4a00d4; }
+
+    
+        section {
+            min-height: 90vh;
+            padding: 120px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        section:nth-child(even) { background-color: white; }
+        section:nth-child(odd) { background-color: var(--cor-fundo); }
+
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .text-box {
+            flex: 1;
+            min-width: 300px;
+            text-align: justify;
+        }
+
+        .title-recipe {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--cor-primaria);
+            margin-bottom: 25px;
+            display: block;
+            border-left: 5px solid var(--cor-primaria);
+            padding-left: 15px;
+        }
+        .img-frame {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--sombra-card);
+            transition: transform 0.3s ease;
+            position: relative;
+            background-color: #eee;
+        }
+
+        .img-frame:hover {
+            transform: translateY(-10px);
+        }
+
+        .img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+    
+        .mate-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ddd;
+            color: #777;
+            font-weight: bold;
+            border: 2px dashed #999;
+        }
+
+    
+        ol li, ul li { margin-bottom: 15px; margin-left: 20px; }
+
+        
+        .links-area a {
+            display: inline-block;
+            background: #eee;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: var(--cor-primaria);
+            margin: 5px 0;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+        }
+        .links-area a:hover { background: #ddd; }
+
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            section { padding: 80px 20px; }
+            .content-container { flex-direction: column; }
+            .img-frame { width: 100%; height: 250px; order: -1; }
+            header { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <h2>🇦🇷 CULINÁRIA ARGENTINA</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#intro">Início</a></li>
+                <li><a href="#alfajor">Alfajor</a></li>
+                <li><a href="#chimichurri">Chimichurri</a></li>
+                <li><a href="#curiosidade">Curiosidades</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero" id="intro">
+        <h1>Sabores do Sul</h1>
+        <p>Uma viagem gastronômica pelas tradições, aromas e paixões da Argentina.</p>
+        <a href="#historia" class="btn-scroll">Começar a Viagem</a>
+    </div>
+
+    <section id="historia">
+        <div class="content-container">
+            <div class="text-box">
+                <span class="title-recipe">A Tradição</span>
+                <p>
+                    A culinária argentina é um reflexo vibrante de suas raízes europeias, com forte influência da Espanha e da Itália, mas com um toque distintamente sul-americano. É mundialmente famosa pela qualidade de suas carnes, especialmente a bovina, que é a estrela dos tradicionais assados.
+                </p>
+                <br>
+                <p>
+                    Além disso, a Argentina encanta com delícias como as saborosas empanadas, o icônico doce de leite e os viciantes alfajores. A mesa argentina é um convite à reunião e à celebração, com pratos fartos e saborosos que representam a paixão e o calor do seu povo.
+                </p>
+            </div>
+            <div class="img-frame">
+                <img src="argentina.jpg" alt="Mesa de comida argentina">
+            </div>
+        </div>
+    </section>
+
+    <section id="alfajor">
+        <div class="content-container">
+            <div class="img-frame">
+                <img src="alfajor.jpeg" alt="Alfajor Argentino">
+            </div>
+            <div class="text-box">
+                <strong class="title-recipe">O Clássico Alfajor</strong>
+                <p>O doce mais amado da argentina. Duas bolachas macias recheadas com muito doce de leite.</p>
+                <br>
+                <ol>
+                    <li>Misture farinha, amido de milho e manteiga para fazer a massa, corte em círculos e asse até dourar levemente.</li>
+                    <li>Deixe as bolachas esfriarem completamente e espalhe uma generosa camada de doce de leite.</li>
+                    <li>Cubra com outra bolacha, formando um "sanduíche", e pressione delicadamente.</li>
+                    <li>Passe as laterais no coco ralado ou banhe em chocolate derretido.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section id="chimichurri">
+        <div class="content-container">
+            <div class="text-box" style="order: 2;"> 
+                <strong class="title-recipe">Molho Chimichurri</strong>
+                <p>O companheiro inseparável do churrasco. Um molho cru, cheio de ervas e sabor.</p>
+                <br>
+                <ol>
+                    <li>Pique finamente salsa, orégano, alho e um pouco de pimenta vermelha e coloque em uma tigela.</li>
+                    <li>Regue esta mistura de ervas com azeite de oliva de boa qualidade e vinagre de vinho tinto.</li>
+                    <li>Tempere generosamente com sal e pimenta do reino, e misture bem.</li>
+                    <li><strong>Dica de Ouro:</strong> Deixe descansar por 30 minutos na geladeira antes de servir.</li>
+                </ol>
+            </div>
+            <div class="img-frame" style="order: 1;">
+                <img src="chimichuri.jpg" alt="Molho Chimichurri">
+            </div>
+        </div>
+    </section>
+
+    <section id="curiosidade">
+        <div class="content-container">
+            <div class="img-frame">
+                <div class="mate-placeholder">
+                    <img src="mate.jpg">
+                </div>
+            </div>
+            <div class="text-box">
+                <strong class="title-recipe">Curiosidade: O Mate</strong>
+                <p>
+                    Você sabia que na Argentina, o Mate é mais do que uma bebida? É um ritual social.
+                </p>
+                <br>
+                <p>
+                    Diferente do Chimarrão gaúcho (que usa erva fina e verde), o Mate argentino usa uma erva com "palos" (pedacinhos do caule) e folhas mais grossas, resultando em um sabor mais amargo e envelhecido. É comum ver argentinos caminhando na rua com a garrafa térmica debaixo do braço, prontos para compartilhar um mate com amigos a qualquer hora do dia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="creditos" style="background-color: #222; color: #fff; min-height: auto; padding: 60px 20px;">
+        <div class="content-container" style="justify-content: center; text-align: center;">
+            <div class="links-area" style="text-align: center;">
+                <h3 style="margin-bottom: 20px; color: var(--cor-primaria);">Fontes & Inspirações</h3>
+                <a href="https://www.receitasnestle.com.br" target="_blank">Receitas Nestlé</a>
+                <br>
+                <a href="https://www.tudogostoso.com.br" target="_blank">Tudo Gostoso</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por <strong>Artur David</strong> e <strong>Gustavo Vieira</strong></p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Projeto IWI - ETEC 2025</p>
+    </footer>
+
+</body>
+</html>
