@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Clarice</title>
+    <style>
+        /* --- Configurações Gerais --- */
+        :root {
+            --bg-color: #fdfbf7; /* Cor de papel envelhecido suave */
+            --text-color: #333333;
+            --accent-color: #8a2be2; /* Um tom sutil de destaque */
+            --placeholder-bg: #e0e0e0;
+            --font-main: 'Georgia', 'Times New Roman', serif;
+            --font-secondary: 'Helvetica', 'Arial', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+        }
+
+        /* --- Cabeçalho --- */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        header p {
+            font-style: italic;
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        /* --- Layout de Conteúdo --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        article {
+            margin-bottom: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Para telas maiores, coloca texto e imagem lado a lado alternando */
+        @media (min-width: 768px) {
+            article {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            /* Inverte a ordem imagem/texto a cada artigo par */
+            article:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .text-content {
+                flex: 1;
+                padding: 0 20px;
+            }
+
+            .image-area {
+                flex: 1;
+            }
+        }
+
+        h2 {
+            font-family: var(--font-secondary);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid #333;
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* --- Espaço para Imagem (Placeholder) --- */
+        .image-placeholder {
+            width: 100%;
+            height: 350px;
+            background-color: var(--placeholder-bg);
+            border: 2px dashed #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-family: var(--font-secondary);
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .image-placeholder:hover {
+            background-color: #d4d4d4;
+            cursor: pointer;
+        }
+
+        /* --- Citação de Destaque --- */
+        .quote-box {
+            background-color: #fff;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* --- Rodapé --- */
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            font-family: var(--font-secondary);
+            font-size: 0.9rem;
+        }
+
+        .credits {
+            border-top: 1px solid #444;
+            padding-top: 10px;
+            margin-top: 10px;
+            opacity: 0.7;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Leitura</h1>
+        <p>"Suponho que me entender não é uma questão de inteligência e sim de sentir, de entrar em contato...
+Ou toca, ou não toca."</p>
+    </header>
+
+    <div class="container">
+
+        <article id="hora-da-estrela">
+            <div class="image-area">
+                <div class="image-placeholder">
+                    <img src="macabea.jpg" alt="Personagem macabea">
+                </div>
+            </div>
+            <div class="text-content">
+                <h2>A Hora da Estrela</h2>
+                <p>O último romance publicado em vida por Clarice. A obra narra a história de Macabéa, uma datilógrafa alagoana que migra para o Rio de Janeiro e vive uma existência medíocre, sem consciência de sua própria miséria.</p>
+                <p>É um livro metalinguístico, onde o narrador fictício, Rodrigo S.M., questiona o próprio ato de escrever e sua relação com a personagem. Uma obra-prima sobre a invisibilidade social e a busca por identidade.</p>
+                <p>Eu particularmente gosto do livro pois revela o quão perigoso pode ser não ter sonhos nem ambições</p>
+            </div>
+        </article>
+
+        <div class="quote-box">
+            "Liberdade é pouco. O que eu desejo ainda não tem nome."
+        </div>
+
+        <article id="um-sopro-de-vida">
+            <div class="image-area">
+                <div class="image-placeholder">
+                    
+                </div>
+            </div>
+            <div class="text-content">
+                <h2>Um Sopro de Vida</h2>
+                <p>Publicado postumamente, este livro é estruturado como um diálogo intenso entre um "Autor" e sua criação, a personagem Ângela Pralini. É uma obra densa que explora os limites da linguagem, da criação artística e da própria morte.</p>
+                <p>Clarice escreveu fragmentos deste livro enquanto sabia que estava morrendo, tornando-o um testamento literário profundo sobre o sentido da existência e do tempo.</p>
+            </div>
+        </article>
+
+        <article id="o-ovo-e-a-galinha">
+            <div class="image-area">
+                <div class="image-placeholder">
+                    
+                </div>
+            </div>
+            <div class="text-content">
+                <h2>O Conto: O Ovo e a Galinha</h2>
+                <p>Considerado por muitos críticos e pela própria autora como um de seus textos mais misteriosos e perfeitos. Publicado no livro "A Legião Estrangeira", o conto parte da observação doméstica de um ovo na cozinha para desencadear reflexões filosóficas profundas.</p>
+                <p>O texto quebra a lógica narrativa tradicional, transformando o ovo em um símbolo do universo, da origem e do sacrifício. É Clarice em sua forma mais hermética e fascinante.</p>
+            </div>
+        </article>
+
+    </div>
+
+    <footer>
+        <h3>Site Hobby - Tributo</h3>
+        <div class="credits" contenteditable="true">
+            Desenvolvido por: [Seu Nome Aqui] - 2024
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 5px;">(Clique no texto acima para editar os créditos)</p>
+    </footer>
+
+</body>
+</html>
